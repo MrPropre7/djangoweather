@@ -4,4 +4,37 @@
 
 <h1>Hello World!!!</h1>
 
+<br/>
+
+
+{% if api %}
+    {% if api == "Error..." %}
+        There was an error, please try...
+
+    {% else %}
+
+
+ <div class="jumbotron">
+        <h1 class="display-4"> time {{ api.0.Category.Name }} </h1>
+        <p class="lead">Location: {{ api.0.ReportingArea }} Air Quality: {{ api.0.AQI }}</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
+{% if api.0.Category.Name == "Moderate" %}
+        <p>(0-50) Air Quality is considered ok, 
+        and air pollution posses little or no risk</p>
+
+{% endif %}
+
+
+
+</div>
+
+
+    {% endif %}
+
+{% endif %}
+
+
 {% endblock %}
